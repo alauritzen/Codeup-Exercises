@@ -1,13 +1,20 @@
 <?php
 
-fwrite(STDOUT, "Enter a starting number.\n");
-$begin=trim(fgets(STDIN));
+if ($argc==4) { 
+    $begin=$argv[1];
+    $end=$argv[2];
+    $increment=$argv[3];
 
-fwrite(STDOUT, "Enter an ending number.\n");
-$end=trim(fgets(STDIN));
+} else {
+    fwrite(STDOUT, "Enter a starting number.\n");
+    $begin=trim(fgets(STDIN));
 
-fwrite(STDOUT, "Enter an increment.\n");
-$increment=trim(fgets(STDIN));
+    fwrite(STDOUT, "Enter an ending number.\n");
+    $end=trim(fgets(STDIN));
+
+    fwrite(STDOUT, "Enter an increment.\n");
+    $increment=trim(fgets(STDIN));
+}
 
 if (!$increment || !ctype_digit($increment)) {
     $increment = 1;
@@ -25,3 +32,5 @@ if (!ctype_digit($begin) || !ctype_digit($end)) {
 for ($i=$begin; $i<=$end; $i+=$increment) {
     fwrite(STDOUT, "$i\n");
 }
+
+
