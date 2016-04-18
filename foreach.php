@@ -10,13 +10,13 @@ foreach ($things as $item) {
         echo "Array item $item is a floating number.\n";
     }
     if (is_bool($item)) {
-        echo "Array item $item is boolean.\n";
+        echo "Array item is boolean.\n";
     }
     if (is_array($item)) {
-        echo "Array item $item is an array.\n";
+        echo "Array item is also an array.\n";
     }
     if (is_null($item)) {
-        echo "Array item $item is a null item.\n";
+        echo "Array item is a null item.\n";
     }
     if (is_string($item)) {
         echo "Array item $item is a string.\n";
@@ -30,10 +30,11 @@ foreach ($things as $item) {
 }
 
 foreach ($things as $item) {
-    echo "$item";
-        if (is_array($item)) {
-            foreach ($item as $part) {
-                echo "$part\n";
-            }
+    if (is_array($item)) {
+        foreach ($item as $part) {
+            echo "$part\n";
         }
+    } else {
+        echo "$item\n";
+    }
 }
