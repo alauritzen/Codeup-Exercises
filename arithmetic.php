@@ -1,5 +1,8 @@
 <?php
 
+$a=100;
+$b=50;
+
 function add($a, $b)
 {
     return $a + $b;
@@ -31,3 +34,4 @@ echo "Multiplying 5*6 = " . multiply(5, 6) . "\n";
 echo "Dividing 12/6 = " . divide(12, 6) . "\n";
 echo "Modulus 12/11 = " . modulus(12,11) . "\n";
 
+echo "Global variables 100, 50 passed to add function = " . add($a,$b) . "\n";
