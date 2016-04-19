@@ -20,7 +20,14 @@ function divide($a, $b)
     return $a / $b;
 }
 
+function modulus ($a, $b)
+{
+    return $a % $b;
+}
+
 echo "Adding 5+6 = " . add(5, 6) . "\n";
 echo "Subtracting 5-6 = " . subtract(5, 6) . "\n";
 echo "Multiplying 5*6 = " . multiply(5, 6) . "\n";
-echo "Dividing 5/6 = " . divide(5, 6) . "\n";
+echo "Dividing 12/6 = " . divide(12, 6) . "\n";
+echo "Modulus 12/11 = " . modulus(12,11) . "\n";
+
