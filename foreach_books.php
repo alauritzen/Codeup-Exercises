@@ -23,10 +23,14 @@ $books = array(
     )
 );
 
+$publishedAfter = 1950;
+
 foreach($books as $title => $info) {
-    echo "{$title}\n";
-    foreach($info as $key => $value) {
-        echo "{$key}: {$value}\n";
+    if ($info['published']>$publishedAfter) {
+        echo "{$title}\n";
+        foreach($info as $key => $value) {
+            echo "{$key}: {$value}\n";
+        }
+        echo "======================\n";
     }
-    echo "======================\n";
 }
