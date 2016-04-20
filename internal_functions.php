@@ -2,7 +2,32 @@
 
 // TODO: Create your inspect() function here
 function inspect($argument) {
-    return " \$argument $argument is " . gettype($argument) . ", and its value is " . strval($argument) . ".";
+    switch (gettype($argument)) {
+        case is_numeric($argument):
+            return " \$argument $argument is " . gettype($argument) . ", and its value is " . strval($argument) . ".";
+            break;
+        case "NULL":
+            return " The value is NULL.";
+            break;
+        case is_bool($argument):
+            if (boolval($argument)==1) {
+                return " " . boolval($argument) . "  is boolean, and is true.";            
+            } else {
+                return " " . boolval($argument) . " is boolean, and is false.";
+            }
+            break;
+        case is_array($argument):
+            return " The value is an array.";
+            break;
+        case (is_string($argument) && empty($argument)):
+            return " The string is empty.";
+            break;
+        case empty($argument):
+            return " The value is an empty array.";
+            break;
+        default:
+            return " \$argument $argument is " . gettype($argument) . ", and its value is " . strval($argument) . ".";
+    }
 }
 
 
