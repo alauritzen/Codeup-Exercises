@@ -1,8 +1,8 @@
 <?php
 
-$names = ['Tina', 'Dana', 'Mike', 'Amy', 'Adam', 'Norm', 'Eddie'];
+$names = ['Tina', 'Dana', 'Mike', 'Amy', 'Adam', 'Norm'];
 
-$compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael', 'Norm'];
+$compare = ['Tina', 'Dean', 'Mel', 'Amy', 'Michael', 'Norm', 'Eddie'];
 
 $query = "Bob";
 
@@ -28,13 +28,28 @@ function compareCast($names, $compare) {
 // echo compareCast($names, $compare) . PHP_EOL;
 
 function combine_arrays($names, $compare) {
+    if (count($names) >= count($compare)) {
+        $arrayOne = $names;
+        $arrayTwo = $compare;
+    } else {
+        $arrayOne = $compare;
+        $arrayTwo = $names;
+    }
+
+    print_r ($arrayOne);
+    print_r ($arrayTwo);
+
+
     $combined = [];
-    foreach($names as $index => $castMember) {
-        if (inCast($compare, $castMember)) {
+    foreach($arrayOne as $index => $castMember) {
+        if (inCast($arrayTwo, $castMember)) {
             $combined[] = $castMember; 
         } else {
-            // $i=array_search($castMember, $names);
-            array_push ($combined, $castMember, $compare[array_search($castMember, $names)]);
+            // $i=array_search($castMember, $arrayOne);
+            array_push ($combined, $castMember); 
+            if (isset($arrayTwo[$index])) {
+                array_push ($combined, $arrayTwo[$index]);
+             }
         }
     }
 
@@ -42,4 +57,4 @@ function combine_arrays($names, $compare) {
 
 } 
 
-var_dump(combine_arrays($names, $compare));
+print_r(combine_arrays($names, $compare));
