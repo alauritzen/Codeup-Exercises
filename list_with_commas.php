@@ -14,9 +14,9 @@ function humanizedList($array, $sort = false) {
     if ($sort) {
         sort($array);
     }
-    $lastPhysicist = array_pop($array);
+    $lastIndex = array_pop($array);
 
-    return implode(", ", $array) . ", and " . $lastPhysicist . ".";
+    return implode(", ", $array) . ", and " . $lastIndex . ".";
 }
 
 echo "Some of the most famous fictional theoretical physicists are " . humanizedList($physicistsArray, true) . PHP_EOL;
