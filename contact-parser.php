@@ -6,8 +6,16 @@ function parseContacts($filename)
     // todo - read file and parse contacts
     $handle=fopen($filename, 'r');
     $contents=fread($handle, filesize($filename));
-    $contacts=explode("\n", $contents);
-    
+    $contacts=explode("\n", trim($contents));
+    $details=array();
+    foreach ($contacts as $key=>$value) {
+        $details = explode("|", $value);
+        $details["name"] = array_shift($details);
+        $details["number"]=array_shift($details);
+        array_push($contacts, $details);
+        array_shift($contacts);
+        // var_dump($details);
+    }
     fclose($handle);
     return $contacts;
 }
