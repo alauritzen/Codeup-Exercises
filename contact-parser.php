@@ -12,6 +12,7 @@ function parseContacts($filename)
         $details = explode("|", $value);
         $details["name"] = array_shift($details);
         $details["number"]=array_shift($details);
+        $details["number"]=substr($details["number"], 0, 3) . "-" . substr($details["number"], 3, 3) . "-" . substr($details["number"], 6, 4);
         array_push($contacts, $details);
         array_shift($contacts);
         // var_dump($details);
