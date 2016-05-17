@@ -1,8 +1,28 @@
 <?php
 class Rectangle
 {
-    protected $height;
-    protected $width;
+    private $height;
+    private $width;
+
+    public function setHeight($height)
+    {
+        $this->height=$height;
+    }
+
+    public function setWidth($width)
+    {
+        $this->width=$width;
+    }
+
+    public function getHeight($height)
+    {
+        return $this->height;
+    }
+
+    public function getWidth($width)
+    {
+        return $this->width;
+    }
 
     public function area() 
     {
@@ -18,8 +38,8 @@ class Rectangle
 
     public function __construct($height, $width) 
     {
-        $this->height=$height;
-        $this->width=$width;
+        $this->setHeight($height);
+        $this->setWidth($width);
     }
 }
 
