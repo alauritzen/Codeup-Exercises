@@ -1,8 +1,8 @@
 <?php
 class Rectangle
 {
-    public $height;
-    public $width;
+    protected $height;
+    protected $width;
 
     public function area() 
     {
