@@ -10,13 +10,24 @@ class Square extends Rectangle
         // $this->width=$height;
     }
 
-    public function squarePerimeter() 
+    public function perimeter() 
     {
         if ($this->height != $this->width) 
         {
             return "This is not a square!";
         } else
+        echo "square perimeter" . PHP_EOL;
         return ($this->height)*4; 
+    }
+
+    public function area() 
+    {
+        if ($this->height != $this->width) 
+        {
+            return "This is not a square!";
+        } else
+        echo "square area" . PHP_EOL;
+        return $this->height*$this->height;
     }
 
 }
