@@ -14,12 +14,12 @@ class Rectangle
         $this->width=$width;
     }
 
-    public function getHeight($height)
+    public function getHeight()
     {
         return $this->height;
     }
 
-    public function getWidth($width)
+    public function getWidth()
     {
         return $this->width;
     }
